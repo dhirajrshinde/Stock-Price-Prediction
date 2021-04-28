@@ -6,12 +6,16 @@ from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 from plotly import graph_objs as go
 
+# setting the date from which data is to be predicted
 START = "2015-01-01"
+
 TODAY = date.today().strftime("%Y-%m-%d")
+
 
 st.title('Stock Price Prediction')
 st.write("Hello User,")
 stocks = (('^BSESN', '^NSEBANK', 'NIFTY50EQUALWEIGHT.NS', '^CRSLDX', 'TATAMOTORS.NS', 'AXISBANK.NS', 'ICICIBANK.NS', 'DRREDDY.NS', 'MRF.NS', 'INFY.NS', 'BAJAJFINANCE.NS', 'BHARTIARTL.NS', 'ONGC.NS', 'IBREALEST.NS', 'GOOG', 'AAPL', 'MSFT', 'GME', ))
+# creating a drop down menu of stock  
 selected_stock = st.selectbox('Select dataset for prediction', stocks)
 
 n_years = st.slider('Years of prediction:', 1, 4)
